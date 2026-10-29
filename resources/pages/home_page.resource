@@ -11,6 +11,6 @@ Recurso             ../page_objects/home_page_objects.resource
 *** Palavras-Chave ***
 Esperar a tela de cadastro carregar
     Wait Until Page Contains Element
-    ...    ${CADASTRESE_BUTTON}
+    ...    ${CADASTRO_BUTTON}
     ...    timeout= 10s    
     ...    error= O sistema demora demais para carregar.

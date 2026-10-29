@@ -1,2 +1,2 @@
 *** Variables ***
-${CADASTRESE_BUTTON}    link: Cadastre-se  
+${CADASTRO_BUTTON}    link: Cadastre-se  
