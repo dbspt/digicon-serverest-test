@@ -4,11 +4,27 @@ language: pt-br
 Documentação        Implementação dos Steps da funcionalidade Login.
 
 Biblioteca          SeleniumLibrary
+Recurso             ../configs/qa.resource
 Recurso             ../pages/home_page.resource
 Recurso             ../pages/login_page.resource
 
 
 *** Palavras-Chave ***
+efetuo logout caso esteja autenticado
+    ${esta_logado} =    Run Keyword And Return Status
+    ...    Element Should Be Visible    xpath: //button[text() = 'Logout']
+    Run Keyword If      ${esta_logado}
+    ...    Click Button    xpath: //button[text() = 'Logout']
+
+
+acesso a tela de login
+    Go To                              ${URL}login
+    Wait Until Element Is Visible
+    ...    ${EMAIL_TEXT_FIELD}
+    ...    timeout= 10s
+    ...    error= A tela de login demora demais para carregar.
+
+
 que a tela de login do sistema carregou
     Esperar a tela de cadastro carregar
 
