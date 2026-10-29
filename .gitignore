@@ -1,1 +1,9 @@
 results/
+output.xml
+log.html
+report.html
+*.png
+__pycache__/
+.venv/
+venv/
+.vscode/
