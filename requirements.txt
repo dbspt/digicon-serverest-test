@@ -1,0 +1,4 @@
+robotframework==7.1.1
+robotframework-seleniumlibrary==6.8.0
+robotframework-faker==5.0.0
+setuptools==80.9.0
