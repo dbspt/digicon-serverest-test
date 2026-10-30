@@ -1,1 +1,27 @@
+# Resultados das execuções do Robot Framework
 results/
+output.xml
+log.html
+report.html
+selenium-screenshot-*.png
+geckodriver-*.log
+*.log
+
+# Ambiente virtual
+.venv/
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Editores e sistema
+.vscode/
+.idea/
+.kiro/
+.DS_Store
+Thumbs.db
+
+# Prints gerados pelos testes
+screenshots/

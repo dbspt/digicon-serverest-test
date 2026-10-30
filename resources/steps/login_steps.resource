@@ -1,37 +1,29 @@
-language: pt-br
+*** Settings ***
+Documentation    Implementação concreta dos passos Gherkin do Login.
+...              Camada Steps: liga cada frase "Dado/Quando/E/Então"
+...              às ações definidas na camada de páginas.
 
-*** Configurações ***
-Documentação        Implementação dos Steps da funcionalidade Login.
+Resource         ../pages/login_actions.resource
 
-Biblioteca          SeleniumLibrary
-Recurso             ../pages/home_page.resource
-Recurso             ../pages/login_page.resource
+*** Keywords ***
+Dado que estou na tela de login
+    Acessar a tela de login
 
+Dado que vou para a tela de login
+    Ir para a tela de login
+    Acessar a tela de login
 
-*** Palavras-Chave ***
-que a tela de login do sistema carregou
-    Esperar a tela de cadastro carregar
+Quando eu informo o email "${email}"
+    Preencher email    ${email}
 
+Quando eu informo a senha "${senha}"
+    Preencher senha    ${senha}
 
-preencho corretamente meus dados de login
-    [Arguments]     ${email}       ${senha}
+E eu informo a senha "${senha}"
+    Preencher senha    ${senha}
 
-    Preencher campo de e-mail      ${email}
-    Preencher campo de senha       ${senha}
+E eu clico no botão entrar
+    Clicar em entrar
 
-
-submeto o formulário para entrar
-    Submeter o formulário de cadastro
-
-
-devo visualizar a Serverest Store
-    Wait Until Page Contains           Serverest Store  timeout=5s
-
-
-devo visualizar as opções restritas
-    Wait Until Page Contains Element   xpath: //button[text() = 'Logout']
-    
-
-não devo mais visualizar a tela de login
-    Page Should Not Contain            Login
-    Capture Page Screenshot
+Então devo ver a mensagem "${mensagem}"
+    Verificar mensagem na tela    ${mensagem}
